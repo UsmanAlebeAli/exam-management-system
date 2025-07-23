@@ -93,13 +93,5 @@ const Dashboard = () => {
     </div>
   );
 };
-<Container className={classes.main_content}>
-  <h2>Exam Analysis Dashboard</h2>
-  <div className={classes.exam_select}>
-    <label htmlFor="exam-select">Select Exam:</label>
-    <select id="exam-select">
-      <option value="bvs-exam">BVS Exam</option>
-    </select>
-  </div>
-</Container>;
+
 export default Dashboard;
