@@ -1,0 +1,36 @@
+.dashboard-card {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f5f5f5; /* Light background for contrast */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between; /* Space between text and image */
+  align-items: center; /* Align items vertically */
+  width: 100%; /* Full width */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column; /* Stack number and label vertically */
+  justify-content: center; /* Center vertically */
+}
+
+.number {
+  font-size: 24px; /* Larger font size for number */
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.label {
+  color: #757575; /* Darker gray for better readability */
+}
+
+.icon-image {
+  width: 50px; /* Set a specific width for the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px; /* Space between text and image */
+}
