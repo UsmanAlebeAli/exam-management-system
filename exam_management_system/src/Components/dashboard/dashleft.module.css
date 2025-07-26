@@ -1,8 +1,6 @@
 /* App.module.css */
 .appContainer {
   display: flex; /* Use flexbox for horizontal layout */
+  width: 100%;
+  margin: 0; 
 }
-
-
-
-

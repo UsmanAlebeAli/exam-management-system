@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  gap: 20px; /* Space between elements */
+}
+
+.registration_paper {
+  padding: 20px; /* Padding inside the Paper component */
+  margin: 0 auto; /* Center the Paper */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  gap: 20px; /* Space between each text field */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+}
+
+.saveButton {
+  margin-top: 20px; /* Space above the button */
+  background-color: #3f51b5; /* Primary color */
+  color: white; /* White text color */
+}
+
+/* Button hover effect */
+.saveButton:hover {
+  background-color: #303f9f; /* Darker shade on hover */
+}
+
+.question_input {
+  width: 100%; /* Full width for all inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 12px; /* Padding inside the input */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Transition effect for border color */
+}

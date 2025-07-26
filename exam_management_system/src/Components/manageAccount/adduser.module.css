@@ -1,0 +1,60 @@
+/* Ensure the container fills the width of the screen */
+.form_container {
+  padding: 30px;
+  margin: 0; /* Remove margins to fill the width */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  width: 100%; /* Full width */
+}
+
+/* Input Fields */
+.input_field {
+  margin-bottom: 20px;
+  width: 100%; /* Ensure full width */
+}
+
+/* Button Container */
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Save Button */
+.save_button {
+  width: 150px;
+  background-color: #3f51b5; /* Primary color */
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Save Button Hover Effect */
+.save_button:hover {
+  background-color: #303f9f; /* Darker shade on hover */
+}
+
+/* Typography */
+h4 {
+  margin-bottom: 20px;
+  color: #333; /* Darker text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .form_container {
+    padding: 20px;
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .input_field {
+    margin-bottom: 15px;
+  }
+
+  .save_button {
+    padding: 12px;
+  }
+}

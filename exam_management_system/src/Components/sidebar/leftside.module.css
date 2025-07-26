@@ -2,7 +2,10 @@
   background-color: #343a40;
   color: white;
   padding: 15px;
-  width: 200px;
+  float: left;
+  width: 400px;
+  height: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 .sidebar ul {
@@ -18,4 +21,36 @@
 
 .sidebar li svg {
   margin-right: 10px;
+}
+.childs {
+  background-color: #343a40;
+  color: white;
+  padding: 15px;
+  width: 210px;
+  margin-left: 170px;
+  margin-top: -235px;
+  gap: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+.buttons {
+  background-color: #fff;
+  color: #222;
+  font-weight: 500;
+  display: inline-block;
+  border: 1px solid #222;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.buttons:hover:not([disabled]) {
+  background: #222;
+  color: #fff;
+}
+a {
+  text-decoration: none; 
 }

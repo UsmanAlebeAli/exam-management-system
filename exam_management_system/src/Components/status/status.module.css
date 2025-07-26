@@ -1,0 +1,60 @@
+.container {
+  padding: 20px;
+}
+.header {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+}
+.table_container {
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #3f51b5; /* Primary color */
+  color: white;
+  font-weight: bold; /* Bold text for headers */
+  font-size: 1.1em; /* Slightly larger font size */
+  text-transform: uppercase; /* Uppercase letters */
+}
+
+.table td {
+  background-color: #ffffff; /* White background for cells */
+  color: #333; /* Dark text color */
+  font-size: 0.95em; /* Slightly smaller font size */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.table tr:hover {
+  background-color: #f1f1f1; /* Light gray on hover */
+}
+
+.table tr:nth-child(even) td {
+  background-color: #f9f9f9; /* Light gray for even rows */
+}
+
+.table tr:nth-child(odd) td {
+  background-color: #ffffff; /* White for odd rows */
+}
+
+.table td:first-child {
+  font-weight: bold; /* Bold text for the first column */
+}
+
+.table_container {
+  margin-bottom: 20px;
+}

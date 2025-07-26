@@ -1,0 +1,58 @@
+/* ExamManagement.css */
+
+.container {
+  padding: 20px;
+}
+
+.paper {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+.table-cell {
+  font-weight: bold;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column;
+  }
+  .button-container button {
+    margin-bottom: 10px;
+  }
+}
+.save-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3f51b5; /* Primary color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: green; /* Darker shade on hover */
+}
+
+.save-button:focus {
+  outline: none; /* Remove focus outline */
+}

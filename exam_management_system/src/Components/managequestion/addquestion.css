@@ -1,0 +1,64 @@
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  gap: 20px; /* Space between items */
+}
+.question-form {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.question-input,
+.answer-option,
+.correct-answer {
+  width: 100%; /* Full width for all inputs */
+  margin-bottom: 30px; /* Increased space between inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 12px; /* Padding inside the input */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Transition effect for border color */
+}
+
+/* Optional: Add a hover effect for better UX */
+.question-input:hover,
+.answer-option:hover,
+.correct-answer:hover {
+  border-color: #999; /* Change border color on hover */
+}
+
+.question-input:focus,
+.answer-option:focus,
+.correct-answer:focus {
+  border-color: #3f51b5; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center the button */
+}
+
+.save-button {
+  padding: 10px 20px; /* Button padding */
+  background-color: #3f51b5; /* Primary color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.save-button:hover {
+  background-color: #303f9f; /* Darker shade on hover */
+}
+
+.save-button:focus {
+  outline: none; /* Remove focus outline */
+}

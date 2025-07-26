@@ -15,7 +15,13 @@
   padding: 30px;
   gap: 5;
 }
-
+.main_content h2 {
+  font-size: 25px;
+  font-weight: 800;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  color: white;
+}
 .exam_select {
   margin-bottom: 20px;
 }
