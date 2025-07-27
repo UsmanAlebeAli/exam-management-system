@@ -4,11 +4,14 @@ import { Container, Typography, Button, Paper, TextField } from "@mui/material";
 
 const AddExam = () => {
   const [examDetails, setExamDetails] = useState({
-    description: "",
     Exam: "",
     startDate: "",
     endDate: "",
     duration: "",
+    passMark: "",
+    subject: "",
+    category: "",
+    termsConditions: "",
   });
 
   const handleSave = (e) => {
@@ -25,18 +28,7 @@ const AddExam = () => {
         </Typography>
         <form onSubmit={handleSave}>
           <TextField
-            label="Exam Description"
-            variant="outlined"
-            fullWidth
-            value={examDetails.description}
-            onChange={(e) =>
-              setExamDetails({ ...examDetails, description: e.target.value })
-            }
-            required
-            style={{ marginBottom: "20px" }}
-          />
-          <TextField
-            label="Exam"
+            label="Exam Name"
             variant="outlined"
             fullWidth
             value={examDetails.Exam}
@@ -80,6 +72,56 @@ const AddExam = () => {
             value={examDetails.duration}
             onChange={(e) =>
               setExamDetails({ ...examDetails, duration: e.target.value })
+            }
+            required
+            style={{ marginBottom: "20px" }}
+          />
+          <TextField
+            label="Pass Mark"
+            variant="outlined"
+            type="number"
+            fullWidth
+            value={examDetails.passMark}
+            onChange={(e) =>
+              setExamDetails({ ...examDetails, passMark: e.target.value })
+            }
+            required
+            style={{ marginBottom: "20px" }}
+          />
+          <TextField
+            label="Subject"
+            variant="outlined"
+            fullWidth
+            value={examDetails.subject}
+            onChange={(e) =>
+              setExamDetails({ ...examDetails, subject: e.target.value })
+            }
+            required
+            style={{ marginBottom: "20px" }}
+          />
+          <TextField
+            label="Category"
+            variant="outlined"
+            fullWidth
+            value={examDetails.category}
+            onChange={(e) =>
+              setExamDetails({ ...examDetails, category: e.target.value })
+            }
+            required
+            style={{ marginBottom: "20px" }}
+          />
+          <TextField
+            label="Terms and Conditions"
+            variant="outlined"
+            fullWidth
+            multiline
+            rows={4}
+            value={examDetails.termsConditions}
+            onChange={(e) =>
+              setExamDetails({
+                ...examDetails,
+                termsConditions: e.target.value,
+              })
             }
             required
             style={{ marginBottom: "20px" }}

@@ -1,0 +1,26 @@
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.department-dropdown {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  transition: border 0.3s ease;
+}
+
+.department-dropdown:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}

@@ -9,6 +9,8 @@ import AddExam from "./Components/manageExam/addexam";
 import AddQuestion from "./Components/managequestion/addquestion";
 import AddUser from "./Components/manageAccount/adduser";
 import Status from "./Components/status/status";
+import Department from "./Components/manageExam/department";
+import Subject from "./Components/manageExam/subject";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       {/* <AddExam /> */}
       {/* <Exams />  */}
       {/* <Status /> */}
+      {/* <Department /> */}
+      {/* <Subject /> */}
     </div>
   );
 }

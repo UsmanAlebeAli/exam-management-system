@@ -33,6 +33,9 @@ function Leftside() {
         return (
           <div className={classes.childs}>
             <h2>Examination</h2>
+            <Link to="/add-subject" className={classes.buttons}>
+              Add Subject
+            </Link>
             <Link to="/add-exam" className={classes.buttons}>
               Add Examination
             </Link>

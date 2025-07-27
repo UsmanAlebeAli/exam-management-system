@@ -8,6 +8,7 @@ import AddExam from "../manageExam/addexam";
 import AddQuestion from "../managequestion/addquestion";
 import AddUser from "../manageAccount/adduser";
 import Status from "../status/status";
+import Subject from "../manageExam/subject";
 
 const Main = () => {
   return (
@@ -21,8 +22,9 @@ const Main = () => {
           <Route path="/add-questions" element={<AddQuestion />} />
           <Route path="/add-account" element={<AddUser />} />
           <Route path="/view-status" element={<Status />} />
+          <Route path="/add-subject" element={<Subject />} />
         </Routes>
-      </Router>
+      </Router> 
     </div>
   );
 };
