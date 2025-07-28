@@ -9,6 +9,7 @@ import AddQuestion from "../managequestion/addquestion";
 import AddUser from "../manageAccount/adduser";
 import Status from "../status/status";
 import Subject from "../manageExam/subject";
+import Viewuser from "../manageAccount/viewuser";
 
 const Main = () => {
   return (
@@ -23,8 +24,9 @@ const Main = () => {
           <Route path="/add-account" element={<AddUser />} />
           <Route path="/view-status" element={<Status />} />
           <Route path="/add-subject" element={<Subject />} />
+          <Route path="/view-account" element={<Viewuser />} />
         </Routes>
-      </Router> 
+      </Router>
     </div>
   );
 };

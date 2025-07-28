@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classes from "./adduser.module.css"; // Ensure this CSS file is created
 import { Container, Typography, Button, Paper, TextField } from "@mui/material";
+import axios from "axios"; // Import Axios
 
 const AddUser = () => {
   const [userDetails, setUserDetails] = useState({
@@ -8,11 +9,36 @@ const AddUser = () => {
     lastName: "",
     password: "",
   });
+  const [errorMessage, setErrorMessage] = useState(""); // State for error message
 
-  const handleSave = (e) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails((prevDetails) => ({
+      ...prevDetails,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = async (e) => {
     e.preventDefault();
-    console.log("User details saved:", userDetails);
-    // Logic to save user details (e.g., API call) goes here
+    setErrorMessage(""); // Reset error message
+
+    console.log("Submitting:", userDetails); // Log the data being submitted
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/add-account",
+        userDetails
+      ); // Use Axios for the POST request
+
+      console.log("User added:", response.data); // Log successful addition
+
+      // Reset form after successful submission
+      setUserDetails({ firstName: "", lastName: "", password: "" });
+    } catch (error) {
+      // console.error("Error:", error); // Log the error
+      setErrorMessage(error.response?.data?.error || "Failed to add user"); // Set error message for display
+    }
   };
 
   return (
@@ -21,26 +47,29 @@ const AddUser = () => {
         <Typography variant="h4" align="center">
           Add System User
         </Typography>
+        {errorMessage && (
+          <Typography color="error" align="center">
+            {errorMessage}
+          </Typography>
+        )}
         <form onSubmit={handleSave}>
           <TextField
             label="First Name"
             variant="outlined"
             fullWidth
             value={userDetails.firstName}
-            onChange={(e) =>
-              setUserDetails({ ...userDetails, firstName: e.target.value })
-            }
+            onChange={handleInputChange} // Use the new change handler
             required
             className={classes.input_field}
+            name="firstName"
           />
           <TextField
             label="Last Name"
+            name="lastName"
             variant="outlined"
             fullWidth
             value={userDetails.lastName}
-            onChange={(e) =>
-              setUserDetails({ ...userDetails, lastName: e.target.value })
-            }
+            onChange={handleInputChange} // Use the new change handler
             required
             className={classes.input_field}
           />
@@ -50,11 +79,10 @@ const AddUser = () => {
             type="password"
             fullWidth
             value={userDetails.password}
-            onChange={(e) =>
-              setUserDetails({ ...userDetails, password: e.target.value })
-            }
+            onChange={handleInputChange} // Use the new change handler
             required
             className={classes.input_field}
+            name="password"
           />
           <div className={classes.button_container}>
             <Button
