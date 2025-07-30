@@ -3,13 +3,13 @@ import axios from "axios";
 import { Link } from "@mui/material";
 
 function Viewuser() {
-  const [user, setuser] = useState([]); // Initialize as an empty array
+  const [user, setUser] = useState([]); // Initialize as an empty array
 
   useEffect(() => {
     const fetchAllUser = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/view-account");
-        setuser(res.data);
+        const res = await axios.get("http://localhost:5000/view-account"); // Ensure the port matches your server
+        setUser(res.data);
       } catch (err) {
         console.log(err);
       }
@@ -22,7 +22,9 @@ function Viewuser() {
       <h1>Users List</h1>
       <div className="userList">
         {user.map((user) => (
-          <div className="user" key={user.user_id}>
+          <div className="user" key={user.id}>
+            {" "}
+            {/* Adjust user.id if your key is named differently */}
             <h1>{user.firstName}</h1>
             <h1>{user.lastName}</h1>
             <h1>{user.password}</h1>
@@ -37,3 +39,4 @@ function Viewuser() {
 }
 
 export default Viewuser;
+ 

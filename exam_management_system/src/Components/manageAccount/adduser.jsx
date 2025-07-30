@@ -10,6 +10,8 @@ const AddUser = () => {
     password: "",
   });
   const [errorMessage, setErrorMessage] = useState(""); // State for error message
+  const [successMessage, setSuccessMessage] = useState(""); // State for success message
+  const [buttonClicked, setButtonClicked] = useState(false); // State for button click
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,22 +24,26 @@ const AddUser = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     setErrorMessage(""); // Reset error message
+    setSuccessMessage(""); // Reset success message
+    setButtonClicked(true); // Change button state
 
     console.log("Submitting:", userDetails); // Log the data being submitted
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/add-account",
+        "http://localhost:5000/add-account",
         userDetails
       ); // Use Axios for the POST request
 
       console.log("User added:", response.data); // Log successful addition
+      setSuccessMessage("User added successfully!"); // Set success message
 
       // Reset form after successful submission
       setUserDetails({ firstName: "", lastName: "", password: "" });
     } catch (error) {
-      // console.error("Error:", error); // Log the error
       setErrorMessage(error.response?.data?.error || "Failed to add user"); // Set error message for display
+    } finally {
+      setButtonClicked(false); // Reset button clicked state
     }
   };
 
@@ -52,13 +58,18 @@ const AddUser = () => {
             {errorMessage}
           </Typography>
         )}
+        {successMessage && (
+          <Typography color="success" align="center">
+            {successMessage}
+          </Typography>
+        )}
         <form onSubmit={handleSave}>
           <TextField
             label="First Name"
             variant="outlined"
             fullWidth
             value={userDetails.firstName}
-            onChange={handleInputChange} // Use the new change handler
+            onChange={handleInputChange}
             required
             className={classes.input_field}
             name="firstName"
@@ -69,7 +80,7 @@ const AddUser = () => {
             variant="outlined"
             fullWidth
             value={userDetails.lastName}
-            onChange={handleInputChange} // Use the new change handler
+            onChange={handleInputChange}
             required
             className={classes.input_field}
           />
@@ -79,7 +90,7 @@ const AddUser = () => {
             type="password"
             fullWidth
             value={userDetails.password}
-            onChange={handleInputChange} // Use the new change handler
+            onChange={handleInputChange}
             required
             className={classes.input_field}
             name="password"
@@ -90,6 +101,9 @@ const AddUser = () => {
               color="primary"
               type="submit"
               className={classes.save_button}
+              style={{
+                backgroundColor: buttonClicked ? "lightblue" : undefined,
+              }} // Change color on click
             >
               Add
             </Button>
